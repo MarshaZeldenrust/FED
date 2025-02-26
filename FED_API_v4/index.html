@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D 5e Character Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Dungeons & Dragons 5e Character</h1>
+        <button id="generate-btn">Generate Random Character</button>
+    </div>
+    <div id="loading" class="loading-hidden">⏳ Generating Character...</div>
+    <div class="sheet">
+
+        <div class="top-section">
+            <div class="character-image">
+                <img id="char-image" src="afbeeldingen/default-fantasy.jpg" alt="Character Image">
+                <div class="banner-container">
+                    <img src="afbeeldingen/dndbanner.png" class="char-banner-img" alt="Banner">
+                    <div class="char-banner-text" id="char-name-banner"></div>
+                </div>
+
+            </div>
+
+            <div class="char-info">
+                <div class="character-info-piece">
+                    <label>Class & Level:</label> <span id="char-class" class="char-info-text"></span>
+                </div>
+
+                <div class="character-info-piece">
+                    <label>Race:</label> <span id="char-race" class="char-info-text"></span>
+                </div>
+
+                <div class="character-info-piece">
+                    <label>Background:</label> <span id="char-background" class="char-info-text"></span>
+                </div>
+
+                <div class="character-info-piece">
+                    <label>Alignment:</label> <span id="char-alignment" class="char-info-text"></span>
+                </div>
+
+                <div class="character-info-piece">
+                    <label>Experience Points:</label> <input type="text" id="char-info-input">
+                </div>
+
+                <div class="character-info-piece">
+                    <label>Player Name:</label> <input type="text" id="char-info-input">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <div class="column">
+                <div class="stat-box">Inspiration: <input type="checkbox" id="inspiration"></div>
+                <div class="stat-box">Proficiency Bonus: <span id="prof-bonus">+2</span></div>
+                <div class="stat-box">STR: <span id="str"></span></div>
+                <div class="stat-box">DEX: <span id="dex"></span></div>
+                <div class="stat-box">CON: <span id="con"></span></div>
+                <div class="stat-box">INT: <span id="int"></span></div>
+                <div class="stat-box">WIS: <span id="wis"></span></div>
+                <div class="stat-box">CHA: <span id="cha"></span></div>
+            </div>
+            <div class="column">
+                <div class="saving-throws box">
+                    <h3>Saving Throws</h3>
+                    <ul>
+                        <li>Strength</li>
+                        <li>Dexterity</li>
+                        <li>Constitution</li>
+                        <li>Intelligence</li>
+                        <li>Wisdom</li>
+                        <li>Charisma</li>
+                    </ul>
+                </div>
+                <div class="skills box">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>Acrobatics</li>
+                        <li>Animal Handling</li>
+                        <li>Arcana</li>
+                        <li>Stealth</li>
+                        <li>Survival</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="combat box">
+                    <h3>Combat Stats</h3>
+                    <p>Armor Class: <span id="ac"></span></p>
+                    <p>Initiative: <span id="initiative"></span></p>
+                    <p>Speed: <span id="speed"></span></p>
+                    <p>Hit Points: <span id="hp"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features box">
+            <h3>Features & Traits</h3>
+            <textarea id="traits"></textarea>
+        </div>
+
+        <div class="equipment box">
+            <h3>Equipment</h3>
+            <textarea id="equipment"></textarea>
+        </div>
+    </div>
+
+    <script src="mainscript.js"></script>
+</body>
+
+</html>

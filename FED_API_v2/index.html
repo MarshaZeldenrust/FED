@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D 5e Character Sheet</title>
+    <link rel="stylesheet" href="mainstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="sheet">
+        <header>
+            <h1>Dungeons & Dragons 5e Character Sheet</h1>
+            <button id="generate-btn">Generate Random Character</button>
+        </header>
+
+        <div id="loading" class="loading-hidden">⏳ Generating Character...</div>
+
+        <section class="image-section">
+            <h3>Character Portrait</h3>
+            <img id="char-image" src="default-character.jpg" alt="Character Image">
+        </section>
+        <section class="char-info">
+            <div class="info-box"><strong>Character Name:</strong> <span id="char-name"></span></div>
+            <div class="info-box"><strong>Gender:</strong> <span id="char-gender"></span></div>
+            <div class="info-box"><strong>Class & Level:</strong> <span id="char-class"></span></div>
+            <div class="info-box"><strong>Race:</strong> <span id="char-race"></span></div>
+            <div class="info-box"><strong>Background:</strong> <span id="char-background"></span></div>
+            <div class="info-box"><strong>Alignment:</strong> <span id="char-alignment"></span></div>
+        </section>
+
+        <section class="stats">
+            <div class="stat"><strong>STR</strong> <span id="str"></span></div>
+            <div class="stat"><strong>DEX</strong> <span id="dex"></span></div>
+            <div class="stat"><strong>CON</strong> <span id="con"></span></div>
+            <div class="stat"><strong>INT</strong> <span id="int"></span></div>
+            <div class="stat"><strong>WIS</strong> <span id="wis"></span></div>
+            <div class="stat"><strong>CHA</strong> <span id="cha"></span></div>
+        </section>
+
+        <section class="combat-stats">
+            <div class="info-box"><strong>Hit Points:</strong> <span id="hp"></span></div>
+            <div class="info-box"><strong>Armor Class:</strong> <span id="ac"></span></div>
+            <div class="info-box"><strong>Speed:</strong> <span id="speed"></span></div>
+            <div class="info-box"><strong>Initiative:</strong> <span id="initiative"></span></div>
+        </section>
+
+        <section class="features">
+            <h3>Features & Traits</h3>
+            <textarea id="traits"></textarea>
+        </section>
+
+        <section class="inventory">
+            <h3>Equipment</h3>
+            <textarea id="equipment"></textarea>
+        </section>
+
+        
+    </div>
+
+    <script src="mainscript.js"></script>
+</body>
+
+</html>
