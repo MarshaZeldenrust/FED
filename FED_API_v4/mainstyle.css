@@ -1,0 +1,185 @@
+body {
+    font-family: 'IM Fell English SC', serif;
+    background-color: #f4f1dc;
+    color: #2b2b2b;
+    text-align: center;
+    padding: 20px;
+}
+
+.sheet {
+    width: 210mm;
+    height: 297mm;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border: 2px solid black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.character-image {
+    width: 200px;
+    height: 250px;
+    border: 2px solid black;
+    background-color: #e1d3b8;
+    display: flex;
+    font-size: 14px;
+    font-style: italic;
+    position: relative;
+    /* Belangrijk voor de banner */
+    flex-direction: column;
+}
+
+.banner-container {
+    top: 20px;
+    position: relative;
+    /* Zorgt ervoor dat de tekst correct bovenop de afbeelding blijft */
+    width: 280px;
+    height: 100px;
+}
+
+.char-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.char-banner-text {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centreert de tekst */
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+
+    text-align: center;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.char-info {
+    display: grid;
+    height: 205px;
+    grid-template-columns: repeat(2, 1fr);
+    /* Twee kolommen */
+    gap: 10px;
+    /* Ruimte tussen de elementen */
+    padding: 10px;
+    padding-top: 35px;
+    border: 2px solid black;
+    background: #e1d3b8;
+    width: 100%;
+    align-items: baseline;
+}
+
+.character-info-piece {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.char-info label {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1em;
+    /* Grotere tekst */
+}
+
+#char-info-input {
+    max-height: 20px;
+    max-width: 130px;
+}
+
+.char-info-text {
+    text-align: left;
+}
+
+.character-image {
+    width: 150px;
+    /* Breedte van de box */
+    height: 250px;
+    /* Hoogte van de box */
+
+    border: 2px solid black;
+    background-color: #e1d3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+#char-image {
+    margin-top: 64px;
+    width: 100%;
+    /* Past de breedte aan de container aan */
+    height: 100%;
+    /* Past de hoogte aan de container aan */
+    object-fit: cover;
+    /* Zorgt ervoor dat de afbeelding de hele box vult zonder vervorming */
+}
+
+.main-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-box,
+.box {
+    background: #e1d3b8;
+    padding: 10px;
+    border: 2px solid black;
+    text-align: left;
+    font-weight: bold;
+}
+
+.features,
+.equipment {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    font-size: 14px;
+}
+
+.loading-hidden {
+    display: none;
+}
+
+.loading-visible {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d9534f;
+    margin-top: 10px;
+}
