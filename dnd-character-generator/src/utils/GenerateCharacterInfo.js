@@ -1,4 +1,5 @@
 //Genereert de Character Info
+
 export async function generateCharacterData() {
     const [raceRes, classRes, backgroundsRes] = await Promise.all([
       fetch('https://www.dnd5eapi.co/api/races'),
@@ -42,11 +43,19 @@ export async function generateCharacterData() {
     const raceData = await fetch(`https://www.dnd5eapi.co/api/races/${randomRace}`).then(res => res.json());
     const classData = await fetch(`https://www.dnd5eapi.co/api/classes/${randomClass}`).then(res => res.json());
   
+    const dexterityScore = Math.floor(Math.random() * 8) + 10;
+    const dexMod = Math.floor((dexterityScore - 10) / 2);
+    const armorClass = 10 + dexMod;
+
     return {
       race: raceData.name,
       charClass: classData.name,
       background: randomBackground,
-      alignment: randomAlignment
+      alignment: randomAlignment,
+      speed: raceData.speed,
+      dexterity: dexterityScore,
+      armorClass: armorClass,
+      ability_bonuses: raceData.ability_bonuses,
     };
   }
   

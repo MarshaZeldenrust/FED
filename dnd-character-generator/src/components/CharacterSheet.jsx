@@ -14,6 +14,7 @@ import { Description } from './Description';
 import { FeaturesTraits } from './FeaturesTraits';
 import { generateCharacterData } from '../utils/GenerateCharacterInfo';
 import { generateAbilityScores } from '../utils/GenerateAbilityScore';
+import { calculateInitiative } from '../utils/DerivedStats';
 
 export default function CharacterSheet() {
   const [character, setCharacter] = useState({});
@@ -21,11 +22,18 @@ export default function CharacterSheet() {
 
   const generateCharacter = async () => {
     const data = await generateCharacterData();
-    setCharacter(data);
-    const scores = generateAbilityScores(data);
-    setStats(scores);
+  
+    const scores = generateAbilityScores(data);        
+    const initiative = calculateInitiative(scores);   
+  
+    setCharacter({
+      ...data,
+      initiative,                                       
+    });
+  
+    setStats(scores);                                   
   };
-
+  
   return (
     <div className="w-full max-w-[1100px] min-h-screen bg-white mx-auto p-4 border-2 shadow-md text-black flex flex-col gap-4">
       {/* Header */}
