@@ -35,7 +35,9 @@ export default function CharacterSheet() {
   };
   
   return (
-    <div className="w-full max-w-[1100px] min-h-screen bg-white mx-auto p-4 border-2 shadow-md text-black flex flex-col gap-4">
+    
+    <div className="w-[210mm] h-[297mm] bg-white mx-auto p-4 border-2 shadow-md text-black flex flex-col gap-4">
+
       {/* Header */}
       <div className="text-center border-b-2 pb-2">
         <h1 className="text-2xl font-bold mb-2">D&D Character Generator</h1>
@@ -63,33 +65,38 @@ export default function CharacterSheet() {
         </div>
       </div>
 
-      {/* Main layout */}
       <div className="flex gap-2 w-full">
-        {/* Left column */}
-        <div className="flex flex-col gap-2 w-1/4">
-          <AbilityScores stats={stats} />
-          <SavingThrows />
-          <SkillsETC />
-          <PerceptionProficiencies />
-        </div>
+  {/* Left column: 1/3 - split into 2 columns */}
+  <div className="w-1/3 flex flex-col gap-2">
+  <div className="grid grid-cols-3 gap-2">
+    <div className="col-span-1">
+      <AbilityScores stats={stats} />
+    </div>
+    <div className="col-span-2">
+      <SkillsETC stats={stats} />
+    </div>
+  </div>
+  <PerceptionProficiencies />
+</div>
 
-        {/* Middle column */}
-        <div className="flex flex-col gap-2 w-1/2">
-          <Health
-            armorClass={character.armorClass || 10}
-            initiative={character.initiative || 2}
-            speed={character.speed || 30}
-          />
-          <AttacksSpells />
-          <Equipment />
-        </div>
+  {/* Middle column: 1/3 */}
+  <div className="w-1/3 flex flex-col gap-2">
+    <Health
+      armorClass={character.armorClass || 10}
+      initiative={character.initiative || 2}
+      speed={character.speed || 30}
+    />
+    <AttacksSpells />
+    <Equipment />
+  </div>
 
-        {/* Right column */}
-        <div className="flex flex-col gap-2 w-1/4">
-          <Description />
-          <FeaturesTraits />
-        </div>
-      </div>
+  {/* Right column: 1/3 */}
+  <div className="w-1/3 flex flex-col gap-2">
+    <Description />
+    <FeaturesTraits />
+  </div>
+</div>
+
     </div>
   );
 }
