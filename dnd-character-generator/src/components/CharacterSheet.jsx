@@ -36,7 +36,7 @@ export default function CharacterSheet() {
   
   return (
     
-    <div className="w-[210mm] h-[297mm] bg-white mx-auto p-4 border-2 shadow-md text-black flex flex-col gap-4">
+    <div className="w-[315mm] h-[445.5mm] bg-white mx-auto p-4 border-2 shadow-md text-black flex flex-col gap-4">
 
       {/* Header */}
       <div className="text-center border-b-2 pb-2">
