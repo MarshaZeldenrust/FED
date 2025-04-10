@@ -1,6 +1,6 @@
 // Character Sheet die aangevuld wordt met de componenten
 import { useState } from 'react';
-import Header from './Header';
+
 import { PortraitBanner } from './PortraitBanner';
 import { CharacterInfo } from './CharacterInfo';
 import AbilityScores from './AbilityScores';
@@ -9,12 +9,14 @@ import { SkillsETC } from './SkillsETC';
 import { PerceptionProficiencies } from './PerceptionProficiencies';
 import Health from './Health';
 import { AttacksSpells } from './AttacksSpells';
-import { Equipment } from './Equipment';
-import { Description } from './Description';
+import  Equipment  from './Equipment';
+import Description from './Description';
 import { FeaturesTraits } from './FeaturesTraits';
 import { generateCharacterData } from '../utils/GenerateCharacterInfo';
 import { generateAbilityScores } from '../utils/GenerateAbilityScore';
 import { calculateInitiative } from '../utils/DerivedStats';
+import GenerateButton from './GenerateButton';
+import { classDefaults } from '../utils/ClassDefaults';
 
 export default function CharacterSheet() {
   const [character, setCharacter] = useState({});
@@ -22,16 +24,58 @@ export default function CharacterSheet() {
 
   const generateCharacter = async () => {
     const data = await generateCharacterData();
+    console.log('charClass from data:', data.charClass);
+    const scores = generateAbilityScores(data);
+    const initiative = calculateInitiative(scores);
+    const classKey = (data.charClass || '').toLowerCase();
   
-    const scores = generateAbilityScores(data);        
-    const initiative = calculateInitiative(scores);   
-  
+    // Fetch equipment
+    const equipmentRes = await fetch(`https://www.dnd5eapi.co/api/classes/${classKey}/starting-equipment`);
+    const equipmentData = await equipmentRes.json();
+    const equipment = equipmentData.starting_equipment.map(item => item.equipment.name);
+
+    // Haal extra data op over elk item
+const weaponDetails = [];
+
+for (const item of equipmentData.starting_equipment) {
+  const index = item.equipment.index;
+  const res = await fetch(`https://www.dnd5eapi.co/api/equipment/${index}`);
+  const details = await res.json();
+
+  if (details.equipment_category.name === 'Weapon') {
+    weaponDetails.push({
+      name: details.name,
+      damage: details.damage?.damage_dice || '—',
+      type: details.damage?.damage_type.name || '—',
+      range: details.weapon_range || '—',
+    });
+  }
+}
+
+    // Fetch spells (optioneel voor classes met magic)
+    let spells = [];
+    try {
+      const spellsRes = await fetch(`https://www.dnd5eapi.co/api/classes/${classKey}/spells`);
+      const spellsData = await spellsRes.json();
+      spells = spellsData.results.slice(0, 5).map(spell => spell.name);
+    } catch (e) {
+      // Niet elke class heeft spells
+      spells = [];
+    }
+
+    console.log('class:', classKey);
+    console.log('spells from API:', spells);
+    console.log('equipment from API:', equipment);
+    
     setCharacter({
       ...data,
-      initiative,                                       
+      initiative,
+      equipment,
+      spells,
+      attacks: weaponDetails,
     });
   
-    setStats(scores);                                   
+    setStats(scores);
   };
   
   return (
@@ -41,12 +85,8 @@ export default function CharacterSheet() {
       {/* Header */}
       <div className="text-center border-b-2 pb-2">
         <h1 className="text-2xl font-bold mb-2">D&D Character Generator</h1>
-        <button
-          onClick={generateCharacter}
-          className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
-        >
-          Generate Character
-        </button>
+        <GenerateButton onGenerate={generateCharacter} />
+
       </div>
 
       {/* Portrait + Character Info */}
@@ -86,8 +126,13 @@ export default function CharacterSheet() {
       initiative={character.initiative || 2}
       speed={character.speed || 30}
     />
-    <AttacksSpells />
-    <Equipment />
+    <AttacksSpells
+  spells={character.spells || []}
+  attacks={character.attacks || []}
+/>
+
+<Equipment equipment={character.equipment || []} />
+
   </div>
 
   {/* Right column: 1/3 */}

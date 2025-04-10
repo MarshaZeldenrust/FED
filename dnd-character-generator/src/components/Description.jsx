@@ -1,7 +1,12 @@
-export function Description() {
-    return (
-      <div className="p-2 border border-black bg-[#e1d3b8] text-center font-bold">
-        Description
-      </div>
-    );
-  }
+import TextBlock from './TextBlock';
+
+export default function Description() {
+  return (
+    <section className="border p-4 rounded shadow bg-white flex flex-col gap-4">
+      <TextBlock label="Personality Traits" />
+      <TextBlock label="Ideals" />
+      <TextBlock label="Bonds" />
+      <TextBlock label="Flaws" />
+    </section>
+  );
+}

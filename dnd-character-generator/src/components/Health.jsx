@@ -42,25 +42,45 @@ export default function Health({ armorClass = 10, initiative = 2, speed = 30 }) 
       {/* HP max */}
       <div className="col-span-3 border p-2 rounded">
         <label className="block text-xs font-semibold mb-1">Hit Point Maximum</label>
-        <input className="w-full border p-1 rounded" type="number" />
+        <input
+  type="number"
+  placeholder="0"
+  className="w-full border p-1 rounded"
+/>
+
       </div>
 
       {/* Current HP */}
       <div className="col-span-3 border p-2 rounded">
         <label className="block text-xs font-semibold mb-1">Current Hit Points</label>
-        <input className="w-full border p-1 rounded" type="number" />
+        <input
+  type="number"
+  placeholder="0"
+  className="w-full border p-1 rounded"
+/>
+
       </div>
 
       {/* Temporary HP */}
       <div className="col-span-3 border p-2 rounded">
         <label className="block text-xs font-semibold mb-1">Temporary Hit Points</label>
-        <input className="w-full border p-1 rounded" type="number" />
+        <input
+  type="number"
+  placeholder="0"
+  className="w-full border p-1 rounded"
+/>
+
       </div>
 
       {/* Hit Dice */}
       <div className="col-span-2 border p-2 rounded">
         <label className="block text-xs font-semibold mb-1">Hit Dice</label>
-        <input className="w-full border p-1 rounded" type="text" />
+        <input
+  type="number"
+  placeholder="0"
+  className="w-full border p-1 rounded"
+/>
+
       </div>
 
       {/* Death Saves */}

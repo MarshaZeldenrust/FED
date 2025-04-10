@@ -87,6 +87,7 @@ export function SkillsETC({ stats = {} }) {
       </div>
 
       {/* Skills */}
+      <p className="text-sm text-gray-600 italic mb-1">Click to select your proficiencies</p>
       <div className="border p-2 rounded bg-white">
   <h4 className="font-bold text-center mb-1">Skills</h4>
   <div className="flex flex-col gap-[4.5px] text-[14px]">
@@ -96,7 +97,7 @@ export function SkillsETC({ stats = {} }) {
           type="checkbox"
           checked={!!proficiencies[skill.name]}
           onChange={() => toggleProficiency(skill.name)}
-          className="shrink-0"
+          className="shrink-0 cursor-pointer"
         />
         <span className="w-5 text-left font-mono text-[14px]">
           {getSkillTotal(skill.ability, skill.name)}
