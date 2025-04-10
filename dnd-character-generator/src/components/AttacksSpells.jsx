@@ -18,14 +18,14 @@ export function AttacksSpells({ spells = [], attacks = [] }) {
   };
 
   return (
-    <div className="p-2 border border-black bg-[#e1d3b8] font-bold text-sm">
-      <h2 className="text-center mb-2">Attacks & Spellcasting</h2>
+    <div className="p-2 border border-black bg-[#e1d3b8]  text-sm">
+      <h2 className="text-center mb-2 font-bold">Attacks & Spellcasting</h2>
 
       {/* Attacks */}
       <div className="mb-4">
         <p className="underline">Attacks:</p>
         {attacks.length > 0 ? (
-          <ul className="list-disc pl-5">
+          <ul className="text-left list-disc pl-5">
             {attacks.map((atk, i) => (
               <li key={i}>
                 {atk.name} — {atk.damage} {atk.type} ({atk.range})
@@ -40,7 +40,7 @@ export function AttacksSpells({ spells = [], attacks = [] }) {
       {/* Spells */}
       <div className="mb-2">
         <p className="underline">Spells:</p>
-        <ul className="list-disc pl-5">
+        <ul className="text-left list-disc pl-5">
           {customSpells.length > 0 ? (
             customSpells.map((spell, i) => <li key={i}>{spell}</li>)
           ) : (
