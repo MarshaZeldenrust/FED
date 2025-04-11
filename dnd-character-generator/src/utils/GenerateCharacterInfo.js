@@ -46,6 +46,8 @@ export async function generateCharacterData() {
     const dexterityScore = Math.floor(Math.random() * 8) + 10;
     const dexMod = Math.floor((dexterityScore - 10) / 2);
     const armorClass = 10 + dexMod;
+    
+    const gender = Math.random() < 0.5 ? "male" : "female";
 
     return {
       race: raceData.name,

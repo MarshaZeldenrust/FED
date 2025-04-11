@@ -91,7 +91,12 @@ for (const item of equipmentData.starting_equipment) {
       {/* Portrait + Character Info */}
       <div className="flex gap-2">
         <div className="w-1/3">
-          <PortraitBanner />
+        <PortraitBanner
+  race={character.race}
+  charClass={character.charClass}
+  gender={character.gender}
+/>
+
         </div>
         <div className="w-2/3">
           <CharacterInfo
