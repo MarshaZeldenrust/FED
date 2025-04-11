@@ -16,7 +16,6 @@ import { generateCharacterData } from '../utils/GenerateCharacterInfo';
 import { generateAbilityScores } from '../utils/GenerateAbilityScore';
 import { calculateInitiative } from '../utils/DerivedStats';
 import GenerateButton from './GenerateButton';
-import { classDefaults } from '../utils/ClassDefaults';
 
 export default function CharacterSheet() {
   const [character, setCharacter] = useState({});
