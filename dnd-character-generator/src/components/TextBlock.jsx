@@ -3,7 +3,7 @@ import { useId } from "react";
 export default function TextBlock({ label }) {
   const id = useId();
   return (
-    <div className="border-2 border-black rounded p-2 bg-gray-50 shadow-inner">
+    <div className="border-1 border-black rounded p-2 bg-gray-50 shadow-inner">
       <label
         className="block text-center uppercase text-xs font-semibold mb-2"
         htmlFor={id}

@@ -14,9 +14,9 @@ export default function Health({ armorClass = 10, initiative = 2, speed = 30 }) 
   };
 
   return (
-    <section className="grid grid-cols-3 gap-2 border p-4 rounded shadow bg-white">
+    <section className="bg-[#e1d3b8] grid grid-cols-3 gap-2 border p-4 rounded shadow">
    {/* Armor Class */}
-<div className="text-center border p-2 rounded font-bold flex flex-col items-center">
+<div className="bg-white text-center border p-2 rounded font-bold flex flex-col items-center">
   <div className="w-12 h-14 bg-white border-2 border-black rounded-b-full flex items-center justify-center">
     <span className="text-lg font-mono">{armorClass}</span>
   </div>
@@ -24,7 +24,7 @@ export default function Health({ armorClass = 10, initiative = 2, speed = 30 }) 
 </div>
 
 {/* Initiative */}
-<div className="flex flex-col items-center border p-2 rounded font-bold">
+<div className="bg-white flex flex-col items-center border p-2 rounded font-bold">
   <div className="w-12 h-14 flex items-center justify-center border-2 border-black rounded">
     <span className="text-lg font-mono">{initiative}</span>
   </div>
@@ -32,7 +32,7 @@ export default function Health({ armorClass = 10, initiative = 2, speed = 30 }) 
 </div>
 
 {/* Speed */}
-<div className="flex flex-col items-center border p-2 rounded font-bold">
+<div className="bg-white flex flex-col items-center border p-2 rounded font-bold">
   <div className="w-12 h-14 flex items-center justify-center border-2 border-black rounded">
     <span className="text-lg font-mono">{speed}</span>
   </div>
@@ -40,7 +40,7 @@ export default function Health({ armorClass = 10, initiative = 2, speed = 30 }) 
 </div>
 
       {/* HP max */}
-      <div className="col-span-3 border p-2 rounded">
+      <div className="bg-white col-span-3 border p-2 rounded">
         <label className="block text-xs font-semibold mb-1">Hit Point Maximum</label>
         <input
   type="number"
@@ -51,7 +51,7 @@ export default function Health({ armorClass = 10, initiative = 2, speed = 30 }) 
       </div>
 
       {/* Current HP */}
-      <div className="col-span-3 border p-2 rounded">
+      <div className="bg-white col-span-3 border p-2 rounded">
         <label className="block text-xs font-semibold mb-1">Current Hit Points</label>
         <input
   type="number"
@@ -62,7 +62,7 @@ export default function Health({ armorClass = 10, initiative = 2, speed = 30 }) 
       </div>
 
       {/* Temporary HP */}
-      <div className="col-span-3 border p-2 rounded">
+      <div className="bg-white col-span-3 border p-2 rounded">
         <label className="block text-xs font-semibold mb-1">Temporary Hit Points</label>
         <input
   type="number"
@@ -73,7 +73,7 @@ export default function Health({ armorClass = 10, initiative = 2, speed = 30 }) 
       </div>
 
       {/* Hit Dice */}
-      <div className="col-span-2 border p-2 rounded">
+      <div className="bg-white col-span-2 border p-2 rounded">
         <label className="block text-xs font-semibold mb-1">Hit Dice</label>
         <input
   type="number"
@@ -84,7 +84,7 @@ export default function Health({ armorClass = 10, initiative = 2, speed = 30 }) 
       </div>
 
       {/* Death Saves */}
-      <div className="border p-2 rounded text-xs">
+      <div className="bg-white border p-2 rounded text-xs">
         <label className="block text-sm font-semibold mb-1">Death Saves</label>
         <div className="mb-1">
           <div>Successes</div>

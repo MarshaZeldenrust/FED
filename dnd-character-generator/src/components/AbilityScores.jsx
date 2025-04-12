@@ -15,7 +15,7 @@ export default function AbilityScores({ stats = {} }) {
   };
 
   return (
-    <div className="p-2 border border-black bg-[#e1d3b8] flex flex-col gap-2">
+    <div className="p-2 rounded border border-black bg-[#e1d3b8] flex flex-col gap-3.5">
       <h3 className="font-bold text-center text-sm">Ability Scores</h3>
       {abilities.map((ability) => {
         const score = stats[ability.toLowerCase()]; // Score ophalen uit stats

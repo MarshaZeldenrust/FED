@@ -18,11 +18,10 @@ export function AttacksSpells({ spells = [], attacks = [] }) {
   };
 
   return (
-    <div className="p-2 border border-black bg-[#e1d3b8]  text-sm">
-      <h2 className="text-center mb-2 font-bold">Attacks & Spellcasting</h2>
-
+    <div className="rounded h-104 p-2 border border-black bg-[#e1d3b8] text-m">
+      <h2 className="eagle-lake-regular text-xl mb-4">Attacks & Spellcasting</h2>
       {/* Attacks */}
-      <div className="mb-4">
+      <div className="mb-4 mt-2 text-sm">
         <span className="underline">Attacks:</span>
         {attacks.length > 0 ? (
           <ul className="text-left list-disc pl-5">
@@ -38,7 +37,7 @@ export function AttacksSpells({ spells = [], attacks = [] }) {
       </div>
 
       {/* Spells */}
-      <div className="mb-2">
+      <div className="mb-2 text-sm">
         <span className="underline">Spells:</span>
         <ul className="text-left list-disc pl-5">
           {customSpells.length > 0 ? (
@@ -50,12 +49,12 @@ export function AttacksSpells({ spells = [], attacks = [] }) {
       </div>
 
       {/* Spell toevoegen */}
-      <div className="flex gap-2 mt-2">
+      <div className="flex gap-2 mt-5 text-sm">
         <input
           value={newSpell}
           onChange={(e) => setNewSpell(e.target.value)}
           placeholder="Add a spell"
-          className="w-full p-1 border border-gray-400 rounded text-black"
+          className="bg-white w-full p-1 border border-black-400 rounded text-black"
         />
         <button
           onClick={addSpell}

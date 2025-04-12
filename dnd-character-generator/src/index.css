@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Uncial+Antiqua&display=swap');
+@import url("https://use.typekit.net/gec2ess.css");
+
 @import "tailwindcss";
 
 :root {
@@ -26,6 +29,8 @@ a:hover {
 }
 
 body {
+  @apply bg-cover bg-center;
+  background-image: url('C:\cygwin64\home\marsh\projects\FED\dnd-character-generator\public\afbeeldingen\background-fantasy1.jpg');
   margin: 0;
   display: flex;
   place-items: center;
@@ -72,4 +77,22 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.eagle-lake-regular {
+  font-family: "Eagle Lake", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.uncial-antiqua-regular {
+  font-family: "Uncial Antiqua", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.masonic-lodge-regular {
+  font-family: "masonic-lodge", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
