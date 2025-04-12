@@ -38,7 +38,7 @@ export function FeaturesTraits({ raceTraits = [], classTraits = [], customTraits
             <li key={`custom-${idx}`}>{trait}</li>
           )) : <li>Voeg hier zelf extra traits toe</li>}
         </ul>
-        <div className="flex gap-2">
+        <div className="flex gap-2 mt-5">
           <input
             type="text"
             value={input}

@@ -135,10 +135,10 @@ export default function CharacterSheet() {
             initiative={character.initiative || 2}
             speed={character.speed || 30}
           />
-          <div><AttacksSpells
+          <AttacksSpells
             spells={character.spells || []}
             attacks={character.attacks || []}
-          /></div>
+          />
           <Equipment equipment={character.equipment || []} />
         </div>
 
