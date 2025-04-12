@@ -28,10 +28,23 @@ export function PerceptionProficiencies({
 
   return (
     <div className="p-4 bg-[#e1d3b8] border border-black rounded">
-      <div className="mb-3">
-        <strong>Passive Wisdom (Perception):</strong>
-        <div className="border p-2 text-center bg-white">{passivePerception}</div>
-      </div>
+     <div className="mb-3 relative group">
+  <strong className="cursor-help">
+    Passive Wisdom (Perception):
+  </strong>
+
+  <div className="text-left absolute left-1/2 -translate-x-1/2 mt-1 w-64 text-xs text-white bg-gray-900 p-3 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none whitespace-pre-line">
+    {`📊 Berekening Passive Perception:
+- Wisdom Modifier (Wisdom - 10 / 2): (${wisdomScore} - 10) / 2 = ${Math.floor((wisdomScore - 10) / 2)}
+- Proficient in Perception: ${isProficientInPerception ? 'ja' : 'nee'}
+- Totale Passive Perception Bonus: ${proficiencyBonus >= 0 ? '+' : ''}${proficiencyBonus}
+✅ Passive Perception = 10 + ${Math.floor((wisdomScore - 10) / 2)}${isProficientInPerception ? ` + ${proficiencyBonus}` : ''} = ${passivePerception}`}
+  </div>
+
+  <div className="border p-2 text-center bg-white">
+    {passivePerception}
+  </div>
+</div>
 
       <div className="mb-3">
         <strong>Languages:</strong>
