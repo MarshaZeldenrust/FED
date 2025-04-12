@@ -25,7 +25,7 @@ const raceMapping = {
     tiefling: {
       male: ["Azazel", "Malphas"],
       female: ["Lilith", "Nyx"]
-    }
+    } 
   };
   
   // 🔧 Naamgenerator logica

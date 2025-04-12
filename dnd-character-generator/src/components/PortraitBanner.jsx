@@ -37,7 +37,7 @@ export function PortraitBanner({ race, charClass, gender = "male" }) {
       tiefling_rogue_male: "/afbeeldingen/characters/tiefling_rogue_male.jpg",
       tiefling_rogue_female: "/afbeeldingen/characters/tiefling_rogue_female.jpg"
       // Kunnen extra combinaties worden toegevoegd, afbeeldingen zijn nu nog placeholders, 
-      // bijbehorende afbeeldingen zoeken kan later als er nog tijd is 
+      // bijbehorende afbeeldingen zoeken kan later als er nog tijd is
     };
 
     return images[key] || fallback;

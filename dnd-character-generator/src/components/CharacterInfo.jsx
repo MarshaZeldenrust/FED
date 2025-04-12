@@ -1,6 +1,6 @@
 export function CharacterInfo({ charClass, race, background, alignment }) {
     return (
-      <div className="bg-[#e1d3b8] border px-8 py-4 grid grid-cols-2 gap-2 text-sm text-left">
+      <div className="bg-[#e1d3b8] border px-8 py-4 grid grid-cols-2 gap-4.5 text-sm text-left">
          <strong>Class & Level:</strong>
       <span className="-ml-40">{charClass}</span>
       <strong>Race:</strong>
