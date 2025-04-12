@@ -1,6 +1,5 @@
 // Character Sheet die aangevuld wordt met de componenten
 import { useState } from 'react';
-
 import { PortraitBanner } from './PortraitBanner';
 import { CharacterInfo } from './CharacterInfo';
 import AbilityScores from './AbilityScores';
