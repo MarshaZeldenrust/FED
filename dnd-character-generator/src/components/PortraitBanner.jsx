@@ -44,7 +44,7 @@ export function PortraitBanner({ race, charClass, gender = "male" }) {
   };
 
   return (
-    <div className="relative flex flex-col items-center border-2 border-black bg-[#e1d3b8] w-full h-[250px]">
+    <div className="relative flex flex-col items-center border-1 rounded border-black bg-[#e1d3b8] w-full h-[250px]">
       {/* Afbeelding */}
       <img
         src={imageSrc}
@@ -59,7 +59,7 @@ export function PortraitBanner({ race, charClass, gender = "male" }) {
           alt="Banner"
           className="w-full h-full object-cover"
         />
-        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black font-bold text-sm whitespace-nowrap">
+        <div className="eagle-lake-regular mt-0.5 absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black font-bold text-xl whitespace-nowrap">
           {name}
         </div>
       </div>

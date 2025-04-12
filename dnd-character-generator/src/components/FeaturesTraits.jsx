@@ -10,11 +10,11 @@ export function FeaturesTraits({ raceTraits = [], classTraits = [], customTraits
   };
 
   return (
-    <div className="h-132 p-4 border border-black bg-[#e1d3b8] text-sm">
-      <h3 className="font-bold text-lg mb-2">Features & Traits</h3>
+    <div className="h-133 p-4 border rounded border-black bg-[#e1d3b8] text-sm">
+      <h3 className="eagle-lake-regular text-xl mb-4">Features & Traits</h3>
 
       <div className="text-left mb-5">
-        <strong>🧝‍♂️ Race Traits:</strong>
+        <strong>Race Traits:</strong>
         <ul className="list-disc list-inside">
           {raceTraits.length > 0 ? raceTraits.map((trait, idx) => (
             <li key={`race-${idx}`}>{trait}</li>
@@ -23,7 +23,7 @@ export function FeaturesTraits({ raceTraits = [], classTraits = [], customTraits
       </div>
 
       <div className="text-left mb-5">
-        <strong>🛡️ Class Features:</strong>
+        <strong>Class Features:</strong>
         <ul className="list-disc list-inside">
           {classTraits.length > 0 ? classTraits.map((feat, idx) => (
             <li key={`class-${idx}`}>{feat}</li>
@@ -32,7 +32,7 @@ export function FeaturesTraits({ raceTraits = [], classTraits = [], customTraits
       </div>
 
       <div className="text-left mb-3">
-        <strong>✍️ Extra:</strong>
+        <strong>Extra:</strong>
         <ul className="list-disc list-inside mb-2">
           {customTraits.length > 0 ? customTraits.map((trait, idx) => (
             <li key={`custom-${idx}`}>{trait}</li>
@@ -44,7 +44,7 @@ export function FeaturesTraits({ raceTraits = [], classTraits = [], customTraits
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Voeg eigen trait toe..."
-            className="flex-grow border rounded p-1 text-xs"
+            className="bg-white flex-grow border rounded p-1 text-xs"
           />
           <button
             onClick={addTrait}

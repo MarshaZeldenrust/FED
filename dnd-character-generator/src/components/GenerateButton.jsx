@@ -23,15 +23,18 @@ export default function GenerateButton({ onGenerate }) {
  <button
   onClick={handleClick}
   disabled={loading}
-  className={`  className="relative px-8 py-3 border-2 border-yellow-400 text-yellow-200 uppercase font-semibold tracking-wide 
-  bg-gradient-to-br from-green-900 to-black 
-  hover:from-yellow-700 hover:to-yellow-900
-  transition-all duration-300 
-  outline-none focus:outline-none rounded-none ${
-    loading
-      ? 'bg-green-400 cursor-not-allowed'
-      : 'bg-green-600 hover:bg-green-700 hover:shadow-lg hover:shadow-darkgreen-400/50'
-  } text-white`}
+  className={`
+    eagle-lake-regular relative px-8 py-3 border-2 border-yellow-400 text-white uppercase font-semibold tracking-wide 
+    bg-gradient-to-br from-yellow-700 to-yellow-900
+    transition-all duration-300 
+ 
+    ${
+      loading
+        ? 'bg-green-400 cursor-not-allowed'
+        : 'bg-green-600 hover:bg-[linear-gradient(to_right,_#2C4A30,_#508C4E)]'
+    }
+
+  `}
 >
   {loading ? (
     <span className="flex items-center gap-2">

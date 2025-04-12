@@ -54,7 +54,7 @@ export function SkillsETC({ stats = {} }) {
   };
 
   return (
-    <div className="flex flex-col gap-2 p-2 border border-black bg-[#e1d3b8] text-sm leading-tight">
+    <div className="flex flex-col gap-2 p-2 border rounded border-black bg-[#e1d3b8] text-sm leading-tight">
       {/* Inspiration */}
       <div className="flex justify-between items-center border p-1 rounded bg-white">
         <label className="font-semibold">Inspiration</label>

@@ -18,8 +18,8 @@ export function AttacksSpells({ spells = [], attacks = [] }) {
   };
 
   return (
-    <div className="h-102 p-2 border border-black bg-[#e1d3b8] text-m">
-      <h2 className="text-center font-bold">Attacks & Spellcasting</h2>
+    <div className="rounded h-104 p-2 border border-black bg-[#e1d3b8] text-m">
+      <h2 className="eagle-lake-regular text-xl mb-4">Attacks & Spellcasting</h2>
       {/* Attacks */}
       <div className="mb-4 mt-2 text-sm">
         <span className="underline">Attacks:</span>
@@ -54,7 +54,7 @@ export function AttacksSpells({ spells = [], attacks = [] }) {
           value={newSpell}
           onChange={(e) => setNewSpell(e.target.value)}
           placeholder="Add a spell"
-          className="w-full p-1 border border-black-400 rounded text-black"
+          className="bg-white w-full p-1 border border-black-400 rounded text-black"
         />
         <button
           onClick={addSpell}

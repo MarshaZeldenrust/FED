@@ -25,7 +25,7 @@ export default function CharacterSheet() {
   const generateCharacter = async () => {
     const data = await generateCharacterData();
     console.log('charClass from data:', data.charClass);
-    console.log('📚 Languages from race:', data.languages); // ✅ toegevoegd om te controleren
+    console.log('📚 Languages from race:', data.languages);
     const scores = generateAbilityScores(data);
     const initiative = calculateInitiative(scores);
     const classKey = (data.charClass || '').toLowerCase();
@@ -80,11 +80,11 @@ export default function CharacterSheet() {
   };
 
   return (
-    <div className="w-[315mm] h-[445.5mm] bg-white mx-auto p-4 border-2 shadow-md text-black flex flex-col gap-4">
+    <div className="w-[315mm] h-[445.5mm] bg-white/70 mx-auto p-4 border-1 rounded shadow-md text-black flex flex-col gap-4">
 
       {/* Header */}
       <div className="text-center border-b-2 pb-2">
-        <h1 className="text-2xl font-bold mb-2">D&D Character Generator</h1>
+        <h1 className="masonic-lodge-regular text-2xl font-bold mb-2">D&D Character Generator</h1>
         <GenerateButton onGenerate={generateCharacter} />
       </div>
 
@@ -123,7 +123,7 @@ export default function CharacterSheet() {
             wisdomScore={stats.wisdom}
             isProficientInPerception={character.proficiencies?.includes("Perception")}
             proficiencyBonus={character.proficiencyBonus || 2}
-            languages={character.languages || []} // ✅ correct doorgegeven
+            languages={character.languages || []} 
             otherProficiencies={character.proficiencies || []}
           /></div>
         </div>
