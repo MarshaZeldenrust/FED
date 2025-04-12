@@ -49,6 +49,16 @@ export async function generateCharacterData() {
 
   const gender = Math.random() < 0.5 ? "male" : "female";
 
+// Race traits ophalen
+const raceTraits = raceData.traits?.map(t => t.name) || [];
+
+// Class features ophalen (alleen level 1)
+const classFeaturesRes = await fetch(`https://www.dnd5eapi.co${classData.class_levels}`);
+const classFeaturesData = await classFeaturesRes.json();
+const level1Features = classFeaturesData
+  .find(level => level.level === 1)
+  ?.features?.map(f => f.name) || [];
+
   return {
     race: raceData.name,
     charClass: classData.name,
@@ -58,6 +68,8 @@ export async function generateCharacterData() {
     dexterity: dexterityScore,
     armorClass: armorClass,
     ability_bonuses: raceData.ability_bonuses,
-    languages: raceData.languages.map(lang => lang.name), // 👈 toegevoegd
+    languages: raceData.languages.map(lang => lang.name),
+    raceTraits: raceTraits,
+classTraits: level1Features,
   };
 }

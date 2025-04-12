@@ -20,6 +20,7 @@ import GenerateButton from './GenerateButton';
 export default function CharacterSheet() {
   const [character, setCharacter] = useState({});
   const [stats, setStats] = useState([]);
+  const [customTraits, setCustomTraits] = useState([]);
 
   const generateCharacter = async () => {
     const data = await generateCharacterData();
@@ -118,13 +119,13 @@ export default function CharacterSheet() {
               <SkillsETC stats={stats} />
             </div>
           </div>
-          <PerceptionProficiencies
+          <div ><PerceptionProficiencies
             wisdomScore={stats.wisdom}
             isProficientInPerception={character.proficiencies?.includes("Perception")}
             proficiencyBonus={character.proficiencyBonus || 2}
             languages={character.languages || []} // ✅ correct doorgegeven
             otherProficiencies={character.proficiencies || []}
-          />
+          /></div>
         </div>
 
         {/* Middle column: 1/3 */}
@@ -134,17 +135,23 @@ export default function CharacterSheet() {
             initiative={character.initiative || 2}
             speed={character.speed || 30}
           />
-          <AttacksSpells
+          <div><AttacksSpells
             spells={character.spells || []}
             attacks={character.attacks || []}
-          />
+          /></div>
           <Equipment equipment={character.equipment || []} />
         </div>
 
         {/* Right column: 1/3 */}
         <div className="w-1/3 flex flex-col gap-2">
           <Description />
-          <FeaturesTraits />
+          <FeaturesTraits
+  raceTraits={character.raceTraits || []}
+  classTraits={character.classTraits || []}
+  customTraits={customTraits}
+  setCustomTraits={setCustomTraits}
+/>
+
         </div>
       </div>
     </div>

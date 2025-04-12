@@ -27,7 +27,7 @@ export function PerceptionProficiencies({
   }, [wisdomScore, isProficientInPerception, proficiencyBonus]);
 
   return (
-    <div className="p-4 bg-[#e1d3b8] border border-black rounded">
+    <div className="h-114 p-4 bg-[#e1d3b8] border border-black rounded">
      <div className="mb-3 relative group">
   <strong className="cursor-help">
     Passive Wisdom (Perception):

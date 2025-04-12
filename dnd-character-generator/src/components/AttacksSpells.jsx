@@ -18,9 +18,8 @@ export function AttacksSpells({ spells = [], attacks = [] }) {
   };
 
   return (
-    <div className="p-2 border border-black bg-[#e1d3b8]  text-sm">
-      <h2 className="text-center mb-2 font-bold">Attacks & Spellcasting</h2>
-
+    <div className="p-2 border border-black bg-[#e1d3b8] text-sm ">
+      <h2 className="h-60 text-center mb-2 font-bold">Attacks & Spellcasting</h2>
       {/* Attacks */}
       <div className="mb-4">
         <span className="underline">Attacks:</span>
