@@ -120,7 +120,14 @@ for (const item of equipmentData.starting_equipment) {
       <SkillsETC stats={stats} />
     </div>
   </div>
-  <PerceptionProficiencies />
+  <PerceptionProficiencies
+  wisdomScore={stats.wisdom}
+  isProficientInPerception={character.proficiencies?.includes("Perception")}
+  proficiencyBonus={character.proficiencyBonus || 2}
+  languages={character.languages || []}
+  otherProficiencies={character.proficiencies || []}
+/>
+
 </div>
 
   {/* Middle column: 1/3 */}
