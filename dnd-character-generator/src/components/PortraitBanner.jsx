@@ -13,29 +13,26 @@ export function PortraitBanner({ race, charClass, gender = "male" }) {
     }
   }, [race, charClass, gender]);
 
-  // Selecteer afbeelding op basis van ras, class en gender
-  const selectImage = (race, charClass, gender) => {
-    const key = `${race.toLowerCase()}_${charClass.toLowerCase()}_${gender.toLowerCase()}`;
-    const fallback = "/afbeeldingen/default-fantasy.jpg";
+// Selecteert afbeelding op basis van ras en gender
+const normalize = (str) =>
+  str.toLowerCase().replace(/\s+/g, "_").replace(/[^a-z0-9_]/g, "");
+
+const selectImage = (race, gender) => {
+  const key = `${normalize(race)}_${normalize(gender)}`;
+  const fallback = "/afbeeldingen/characters/human_female.jpg";
 
     const images = {
-      human_barbarian_male: "/afbeeldingen/characters/human_barbarian_male.jpg",
-      human_barbarian_female: "/afbeeldingen/characters/human_barbarian_female.jpg",
-      elf_wizard_male: "/afbeeldingen/characters/elf_wizard_male.jpg",
-      elf_wizard_female: "/afbeeldingen/characters/elf_wizard_female.jpg",
-      dwarf_fighter_male: "/afbeeldingen/characters/dwarf_fighter_male.jpg",
-      tiefling_warlock_female: "/afbeeldingen/characters/tiefling_warlock_female.jpg",
-      barbarian_male: "/afbeeldingen/characters/barbarian_male.jpg",
-      barbarian_female: "/afbeeldingen/characters/barbarian_female.jpg",
-      rogue_male: "/afbeeldingen/characters/rogue_male.jpg",
-      rogue_female: "/afbeeldingen/characters/rogue_female.jpg",
-      wizard_male: "/afbeeldingen/characters/wizard_male.jpg",
-      wizard_female: "/afbeeldingen/characters/wizard_female.jpg",
-      orc_barbarian_female: "/afbeeldingen/characters/orc_barbarian_female.jpg",
-      human_warrior_male: "/afbeeldingen/characters/human_warrior_male.jpg",
-      human_warrior_female: "/afbeeldingen/characters/human_warrior_female.jpg",
-      tiefling_rogue_male: "/afbeeldingen/characters/tiefling_rogue_male.jpg",
-      tiefling_rogue_female: "/afbeeldingen/characters/tiefling_rogue_female.jpg"
+      human_male: "/afbeeldingen/characters/human_male.jpg",
+      human_female: "/afbeeldingen/characters/human_female.jpg",
+      elf_male: "/afbeeldingen/characters/elf_male.jpg",
+      elf_female: "/afbeeldingen/characters/elf_female.jpg",
+      dwarf_male: "/afbeeldingen/characters/dwarf_male.jpg",
+      dwarf_female: "/afbeeldingen/characters/dwarf_female.jpg",
+      orc_male: "/afbeeldingen/characters/orc_male.jpg",
+      orc_female: "/afbeeldingen/characters/orc_female.jpg",
+      tiefling_male: "/afbeeldingen/characters/tiefling_male.jpg",
+      tiefling_female: "/afbeeldingen/characters/tiefling_female.jpg"
+  
       // Kunnen extra combinaties worden toegevoegd, afbeeldingen zijn nu nog placeholders, 
       // bijbehorende afbeeldingen zoeken kan later als er nog tijd is
     };
