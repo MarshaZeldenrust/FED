@@ -14,7 +14,7 @@ export function PerceptionProficiencies({
       const wisdomModifier = Math.floor((wisdomScore - 10) / 2);
       const calculated = 10 + wisdomModifier + (isProficientInPerception ? proficiencyBonus : 0);
 
-      console.log("📊 Berekening Passive Perception:");
+      console.log("📊 Calculating Passive Perception:");
       console.log(` - Wisdom Score: ${wisdomScore}`);
       console.log(` - Wisdom Modifier: ${wisdomModifier}`);
       console.log(` - Proficient in Perception: ${isProficientInPerception}`);
@@ -34,10 +34,10 @@ export function PerceptionProficiencies({
   </strong>
 
   <div className="text-left absolute left-1/2 -translate-x-1/2 mt-1 w-64 text-xs text-white bg-gray-900 p-3 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none whitespace-pre-line">
-    {`📊 Berekening Passive Perception:
+    {`📊 Calculating Passive Perception:
 - Wisdom Modifier (Wisdom - 10 / 2): (${wisdomScore} - 10) / 2 = ${Math.floor((wisdomScore - 10) / 2)}
-- Proficient in Perception: ${isProficientInPerception ? 'ja' : 'nee'}
-- Totale Passive Perception Bonus: ${proficiencyBonus >= 0 ? '+' : ''}${proficiencyBonus}
+- Proficient in Perception: ${isProficientInPerception ? 'yes' : 'no'}
+- Total Passive Perception Bonus: ${proficiencyBonus >= 0 ? '+' : ''}${proficiencyBonus}
 ✅ Passive Perception = 10 + ${Math.floor((wisdomScore - 10) / 2)}${isProficientInPerception ? ` + ${proficiencyBonus}` : ''} = ${passivePerception}`}
   </div>
 

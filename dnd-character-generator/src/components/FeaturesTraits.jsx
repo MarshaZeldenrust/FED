@@ -18,7 +18,7 @@ export function FeaturesTraits({ raceTraits = [], classTraits = [], customTraits
         <ul className="list-disc list-inside">
           {raceTraits.length > 0 ? raceTraits.map((trait, idx) => (
             <li key={`race-${idx}`}>{trait}</li>
-          )) : <li>Geen</li>}
+          )) : <li>None</li>}
         </ul>
       </div>
 
@@ -27,7 +27,7 @@ export function FeaturesTraits({ raceTraits = [], classTraits = [], customTraits
         <ul className="list-disc list-inside">
           {classTraits.length > 0 ? classTraits.map((feat, idx) => (
             <li key={`class-${idx}`}>{feat}</li>
-          )) : <li>Geen</li>}
+          )) : <li>None</li>}
         </ul>
       </div>
 
@@ -36,7 +36,7 @@ export function FeaturesTraits({ raceTraits = [], classTraits = [], customTraits
         <ul className="list-disc list-inside mb-2">
           {customTraits.length > 0 ? customTraits.map((trait, idx) => (
             <li key={`custom-${idx}`}>{trait}</li>
-          )) : <li>Voeg hier zelf extra traits toe</li>}
+          )) : <li>Add extra traits</li>}
         </ul>
         <div className="flex gap-2 mt-5">
           <input
@@ -50,7 +50,7 @@ export function FeaturesTraits({ raceTraits = [], classTraits = [], customTraits
             onClick={addTrait}
             className="bg-black text-white text-xs px-2 py-1 rounded"
           >
-            Voeg toe
+            Add
           </button>
         </div>
       </div>
