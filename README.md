@@ -17,3 +17,5 @@ Hieronder de instructies:
     npm run dev
 
     Dat is em, tada!
+
+Als de node_modules directory toch is meegekomen met het downloaden van mijn code en je krijgt een error, probeer dan node_modules te verwijderen en voer opnieuw npm install uit
