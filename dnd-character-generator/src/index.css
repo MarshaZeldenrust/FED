@@ -30,7 +30,7 @@ a:hover {
 
 body {
   @apply bg-cover bg-center;
-  background-image: url('C:\cygwin64\home\marsh\projects\FED\dnd-character-generator\public\afbeeldingen\background-fantasy1.jpg');
+  background-image: url('/afbeeldingen/background-fantasy1.jpg');
   margin: 0;
   display: flex;
   place-items: center;

@@ -87,7 +87,7 @@ export function SkillsETC({ stats = {} }) {
       </div>
 
       {/* Skills */}
-      <p className="text-sm text-gray-600 italic mb-1">Click to select your proficiencies</p>
+      <p className="text-sm text-gray-600 italic mt-1 mb-1">Click to select your proficiencies</p>
       <div className="border p-2 rounded bg-white">
   <h4 className="font-bold text-center mb-1">Skills</h4>
   <div className="flex flex-col gap-[4.5px] text-[14px]">

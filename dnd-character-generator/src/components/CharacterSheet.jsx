@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { PortraitBanner } from './PortraitBanner';
 import { CharacterInfo } from './CharacterInfo';
 import AbilityScores from './AbilityScores';
-import { SavingThrows } from './SavingThrows';
 import { SkillsETC } from './SkillsETC';
 import { PerceptionProficiencies } from './PerceptionProficiencies';
 import Health from './Health';
@@ -13,7 +12,7 @@ import Description from './Description';
 import { FeaturesTraits } from './FeaturesTraits';
 import { generateCharacterData } from '../utils/GenerateCharacterInfo';
 import { generateAbilityScores } from '../utils/GenerateAbilityScore';
-import { calculateInitiative } from '../utils/DerivedStats';
+import { calculateArmorClass, calculateInitiative } from '../utils/DerivedStats';
 import GenerateButton from './GenerateButton';
 
 export default function CharacterSheet() {
@@ -69,7 +68,6 @@ export default function CharacterSheet() {
 
     setCharacter({
       ...data,
-      initiative,
       equipment,
       spells,
       attacks: weaponDetails,

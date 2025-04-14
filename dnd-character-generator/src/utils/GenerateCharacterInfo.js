@@ -1,4 +1,5 @@
 //Genereert de Character Info
+import { calculateArmorClass, calculateInitiative } from '../utils/DerivedStats';
 
 export async function generateCharacterData() {
   const [raceRes, classRes, backgroundsRes] = await Promise.all([
@@ -44,9 +45,9 @@ export async function generateCharacterData() {
   const classData = await fetch(`https://www.dnd5eapi.co/api/classes/${randomClass}`).then(res => res.json());
 
   const dexterityScore = Math.floor(Math.random() * 8) + 10;
-  const dexMod = Math.floor((dexterityScore - 10) / 2);
-  const armorClass = 10 + dexMod;
-
+  const armorClass = calculateArmorClass(dexterityScore);
+  const initiative = calculateInitiative(dexterityScore);
+  
   const gender = Math.random() < 0.5 ? "male" : "female";
 
 // Race traits ophalen
@@ -66,10 +67,11 @@ const level1Features = classFeaturesData
     alignment: randomAlignment,
     speed: raceData.speed,
     dexterity: dexterityScore,
-    armorClass: armorClass,
     ability_bonuses: raceData.ability_bonuses,
     languages: raceData.languages.map(lang => lang.name),
     raceTraits: raceTraits,
 classTraits: level1Features,
+armorClass: armorClass,
+initiative: initiative,
   };
 }
