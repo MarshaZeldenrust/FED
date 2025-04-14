@@ -1,21 +1,52 @@
-# This is my dnd character sheet project for FED :smile:
+# D&D Character Generator
 
-Hieronder de instructies:
-1. Download Node.js (LTS) van: https://nodejs.org/en
-2. Doorloop de installatie
-3. Controleer of alles werkt via de terminal met:
+## Installatie-instructies
+
+### Voorbereiding
+
+1. Download en installeer Node.js (LTS):  
+   https://nodejs.org/en
+
+2. Controleer in de terminal of alles correct is geïnstalleerd:
+   ```bash
    node -v
    npm -v
-4. Ga naar https://github.com/MarshaZeldenrust/FED
-5. Klik op Code > Download ZIP
-6. Pak het ZIP-bestand uit op je computer
-7. Open de map in Visual Studio Code (of een andere code editor)
-8. Zorg dat je in de juiste map zit: dnd-character-generator
-9. Open je terminal en voer uit:
-    npm install
-10. Vervolgens kun je de pagina runnen met:
-    npm run dev
+   ```
 
-    Dat is em, tada!
+### Project downloaden en opstarten
 
-Als de node_modules directory toch is meegekomen met het downloaden van mijn code en je krijgt een error, probeer dan node_modules te verwijderen en voer opnieuw npm install uit
+3. Ga naar de GitHub repository:  
+   https://github.com/MarshaZeldenrust/FED
+
+4. Klik op **Code > Download ZIP**
+
+5. Pak het ZIP-bestand uit op je computer
+
+6. Open de uitgepakte map in **Visual Studio Code** (of een andere code editor)
+
+7. Navigeer naar de map `dnd-character-generator` in de terminal:
+   ```bash
+   cd dnd-character-generator
+   ```
+
+8. Installeer de benodigde dependencies:
+   ```bash
+   npm install
+   ```
+
+9. Start de server:
+   ```bash
+   npm run dev
+   ```
+
+10. De app opent in je browser via de link in je terminal
+
+
+### Let op!
+
+Als de map `node_modules` per ongeluk is meegekomen of als je een foutmelding krijgt, verwijder dan deze map en installeer opnieuw:
+
+```bash
+rm -rf node_modules
+npm install
+```
