@@ -65,6 +65,7 @@ const level1Features = classFeaturesData
     charClass: classData.name,
     background: randomBackground,
     alignment: randomAlignment,
+    gender: gender,
     speed: raceData.speed,
     dexterity: dexterityScore,
     ability_bonuses: raceData.ability_bonuses,
