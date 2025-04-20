@@ -90,7 +90,6 @@ export default function CharacterSheet() {
         <div className="w-1/3">
           <PortraitBanner
             race={character.race}
-            charClass={character.charClass}
             gender={character.gender}
           />
         </div>
