@@ -31,8 +31,18 @@ export function PortraitBanner({ race, gender = "male" }) {
       orc_male: "/afbeeldingen/characters/orc_male.jpg",
       orc_female: "/afbeeldingen/characters/orc_female.jpg",
       tiefling_male: "/afbeeldingen/characters/tiefling_male.jpg",
-      tiefling_female: "/afbeeldingen/characters/tiefling_female.jpg"
-
+      tiefling_female: "/afbeeldingen/characters/tiefling_female.jpg",
+      gnome_female: "/afbeeldingen/characters/gnome_female.jpg",
+      gnome_male: "/afbeeldingen/characters/gnome_male.jpg",
+     halfling_male: "/afbeeldingen/characters/halfling_male.jpg",
+     halfling_female: "/afbeeldingen/characters/halfling_female.jpg",
+     dragonborn_male: "/afbeeldingen/characters/dragonborn_male.jpg",
+     dragonborn_female: "/afbeeldingen/characters/dragonborn_female.jpg",
+     halforc_male: "/afbeeldingen/characters/halforc_male.jpg",
+     halforc_female: "/afbeeldingen/characters/halforc_female.jpg",
+     halfelf_male: "/afbeeldingen/characters/halfelf_male.jpg",
+     halfelf_female: "/afbeeldingen/characters/halfelf_female.jpg",
+      
       // Kunnen extra combinaties worden toegevoegd, afbeeldingen zijn nu nog placeholders, 
       // bijbehorende afbeeldingen zoeken kan later als er nog tijd is
     };
